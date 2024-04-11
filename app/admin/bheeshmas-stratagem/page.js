@@ -6,9 +6,9 @@ export default function Home() {
 
   return (
     <main className="flex h-screen bg-white flex-col gap-12 items-center p-24">
-      <h2 className="">Admin Page</h2>
+      <h2 className="text-black">Admin Page</h2>
       <div className="flex flex-col gap-2 text-sm border border-black rounded-lg p-3">
-        <p>Login Here</p>
+        <p className="text-black">Login Here</p>
       </div>
     </main>
   );
