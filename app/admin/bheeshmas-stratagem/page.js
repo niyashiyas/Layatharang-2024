@@ -1,15 +1,20 @@
-"use client";
-import {useRouter} from "next/navigation";
+import React from "react";
 
-export default function Home() {
-  const router = useRouter();
+import getUserSession from "@/lib/actions";
+import { redirect } from "next/navigation";
 
-  return (
-    <main className="flex h-screen bg-white flex-col gap-12 items-center p-24">
-      <h2 className="text-black">Admin Page</h2>
-      <div className="flex flex-col gap-2 text-sm border border-black rounded-lg p-3">
-        <p className="text-black">Login Here</p>
-      </div>
-    </main>
-  );
+import AuthForm from "@/components/AuthForm.js";
+export default async function page() {
+	 const {data} = await getUserSession();
+	 if(data.user){
+		 redirect("/admin/bheeshmas-stratagem/dashboard");
+	 }
+	return (
+		<div className="flex justify-center items-center h-screen">
+			<div className="w-full">
+				
+				<AuthForm />
+			</div>
+		</div>
+	);
 }
