@@ -1,10 +1,11 @@
 'use client'
 import withAuth from "@/components/auth"
+import { AddResultForm } from "@/components/component/add-result-form"
 
 function Dashboard () {
     return (
         <div>
-            <h1>Dashboard</h1>
+            <AddResultForm />
         </div>
     )
 }
