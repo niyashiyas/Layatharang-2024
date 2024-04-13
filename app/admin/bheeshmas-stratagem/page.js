@@ -12,7 +12,6 @@ export default async function page() {
 	return (
 		<div className="flex justify-center items-center h-screen">
 			<div className="w-full">
-				
 				<AuthForm />
 			</div>
 		</div>
