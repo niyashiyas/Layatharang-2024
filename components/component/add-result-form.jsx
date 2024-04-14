@@ -68,7 +68,6 @@ export function AddResultForm() {
         participant: row.participant
       }
     });
-    console.log("results",results);
     const {data: createdResults , error2} = await supabase.from('result').insert(results).select('*');
     if(error2)console.log("error in creating results",error2);
     else 
