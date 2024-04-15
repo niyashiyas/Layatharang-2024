@@ -63,11 +63,11 @@ export default function Home() {
         {chakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
-        <ResultCard result={{ name: "Poem writing" }} />
+        {/* <ResultCard result={{ name: "Poem writing" }} />
         <ResultCard result={{ name: "Writing competition" }} />
         <ResultCard result={{ name: "Swimming competition" }} />
         <ResultCard result={{ name: "Poem writing" }} />
-        <ResultCard result={{ name: "Poem writing" }} />
+        <ResultCard result={{ name: "Poem writing" }} /> */}
       </div>
     </main>
   );
