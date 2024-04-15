@@ -11,7 +11,7 @@ export default function Home() {
         <div className="flex rounded-3xl bg-[#151515] font-semibold">
           <div
             onClick={() => router.push("scoreboard")}
-            className="cursor-pointer rounded-3xl bg-[#ffa71a] px-8 py-2 hover:bg-[#febe58]"
+            className="cursor-pointer rounded-3xl bg-[#ffa71a] px-8 py-2 text-black hover:bg-[#febe58]"
           >
             Score
           </div>
