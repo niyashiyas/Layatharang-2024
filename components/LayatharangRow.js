@@ -2,9 +2,9 @@
 import React from "react";
 import Image from "next/image";
 
-const HouseLogo = ({ houseName }) => {
-  switch (houseName) {
-    case "Mahaveeras":
+const HouseLogo = ({ name }) => {
+  switch (name) {
+    case "MAHAVEERAS":
       return (
         <Image
           className="mx-auto object-cover"
@@ -14,7 +14,7 @@ const HouseLogo = ({ houseName }) => {
           alt=" Mahaveeras Logo"
         />
       );
-    case "Adheeras":
+    case "ADHEERAS":
       return (
         <Image
           className="mx-auto object-cover"
@@ -24,7 +24,7 @@ const HouseLogo = ({ houseName }) => {
           alt=" Adheeras Logo"
         />
       );
-    case "Dhronas":
+    case "DHRONAS":
       return (
         <Image
           className="mx-auto object-cover"
@@ -34,7 +34,7 @@ const HouseLogo = ({ houseName }) => {
           alt=" Dhronas Logo"
         />
       );
-    case "Brahmas":
+    case "BRAHMAS":
       return (
         <Image
           className=" mx-auto object-cover"
@@ -50,26 +50,26 @@ const HouseLogo = ({ houseName }) => {
 };
 
 export default function LayatharangRow({ rowData }) {
-  const { position, houseName, points } = rowData;
+  const { chakravyuh_points, id, name, layatarang_points } = rowData;
 
   // Define gradient colors for each house
   const gradientColors = {
-    Mahaveeras: "bg-gradient-to-l from-[#693F85] to-[#1B0C28]",
-    Adheeras: "bg-gradient-to-l from-[#D42423] to-[#4D0303]",
-    Dhronas: "bg-gradient-to-l from-[#26574B] to-[#112A24]",
-    Brahmas: "bg-gradient-to-l from-[#03BFF0] to-[#13274A]",
+    MAHAVEERAS: "bg-gradient-to-b from-[#693F85] to-[#1B0C28]",
+    ADHEERAS: "bg-gradient-to-b from-[#D42423] to-[#4D0303]",
+    DHRONAS: "bg-gradient-to-b from-[#26574B] to-[#112A24]",
+    BRAHMAS: "bg-gradient-to-b from-[#03BFF0] to-[#13274A]",
   };
 
   // Get the gradient color based on the house name
-  const houseColor = gradientColors[houseName];
+  const houseColor = gradientColors[name];
 
   return (
     <tr className={`${houseColor} rounded-2xl text-center text-white`}>
-      <td className="rounded-l px-12 py-7">{position}</td>
+      <td className="rounded-l px-16 py-7">1</td>
       <td className="py-0">
-        <HouseLogo houseName={houseName} />
+        <HouseLogo name={name} />
       </td>
-      <td className="rounded-r px-10 py-7">{points}</td>
+      <td className="rounded-r px-14 py-7">{layatarang_points}</td>
     </tr>
   );
 }
