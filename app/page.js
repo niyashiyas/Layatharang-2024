@@ -1,9 +1,32 @@
 "use client";
+import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const router = useRouter();
+  const [layatarangScoreboard, setLayatarangScoreboard] = useState([]);
+  const [chakravyuhScoreboard, setChakravyuhScoreboard] = useState([]);
+  const [scoreboard, setScoreboard] = useState([]);
+  const [loading, setLoading] = useState(true);
+    
 
+  useEffect(() => {
+    setLoading(true);
+    async function fetchScoreboard() {
+        const scoreboard = await supabase.from('house').select('*').order('layatarang_points', {ascending: false});
+        if (scoreboard.error){ console.log(scoreboard.error);;
+        return
+        }
+        setLayatarangScoreboard(scoreboard.data);
+        setChakravyuhScoreboard([...scoreboard.data].sort((a, b) => b.chakravyuh_points - a.chakravyuh_points));        
+        setScoreboard([...scoreboard.data].sort((a, b) => (b.layatharang_points + b.chakravyuh_points) - (a.layatharang_points + a.chakravyuh_points)));      setLoading(false);
+      return
+    }
+    fetchScoreboard();
+
+
+  }, []);
   return (
     // <main className="flex h-screen flex-col items-center justify-between gap-4 bg-[url('/bg1.png')] p-24">
     <main className="flex h-screen flex-col items-center justify-between gap-4 bg-black  p-24">

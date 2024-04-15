@@ -1,0 +1,153 @@
+.container {
+  position: relative;
+  width: 380px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    #3a2c0f 68%,
+    #cfc09f 100%
+  );
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  z-index: -1;
+}
+
+.container:hover::before {
+  animation: gradient-up 1s linear infinite;
+  animation-delay: -0.25s;
+}
+
+@keyframes gradient-up {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    #3a2c0f 68%,
+    #cfc09f 100%
+  );
+  background-size: 200% 100%;
+  background-position: 150% 0;
+  z-index: -1;
+}
+
+.container:hover::after {
+  animation: gradient-down 1s linear infinite;
+  animation-delay: -0.25s;
+}
+
+@keyframes gradient-down {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.leftborder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    #3a2c0f 68%,
+    #cfc09f 100%
+  );
+  background-size: 100% 200%;
+  background-position: 0 50%;
+  z-index: -1;
+  /* animation: gradient 2s linear infinite; */
+}
+
+.container:hover > .leftborder {
+  animation: gradient-left 1s linear infinite;
+  animation-delay: -0.25s;
+}
+
+@keyframes gradient-left {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+
+.rightborder {
+  position: absolute;
+  top: 0;
+  left: 99.3%;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(
+    to top,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    #3a2c0f 68%,
+    #cfc09f 100%
+  );
+  background-size: 100% 200%;
+  background-position: 0 50%;
+  z-index: -1;
+  /* animation: gradient 2s linear infinite; */
+}
+
+.container:hover > .rightborder {
+  animation: gradient-right 1s linear infinite;
+  animation-delay: -0.7s;
+}
+
+@keyframes gradient-right {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -200%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    height: 150px;
+  }
+}
