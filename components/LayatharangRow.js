@@ -49,8 +49,8 @@ const HouseLogo = ({ houseName }) => {
   }
 };
 
-export default function LeaderboardRow({ rowData }) {
-  const { position, houseName, layatharang, chakravyuh, total } = rowData;
+export default function LayatharangRow({ rowData }) {
+  const { position, houseName, points } = rowData;
 
   // Define gradient colors for each house
   const gradientColors = {
@@ -65,13 +65,11 @@ export default function LeaderboardRow({ rowData }) {
 
   return (
     <tr className={`${houseColor} rounded-2xl text-center text-white`}>
-      <td className="rounded-l py-7">{position}</td>
+      <td className="rounded-l px-12 py-7">{position}</td>
       <td className="py-0">
         <HouseLogo houseName={houseName} />
       </td>
-      <td className="py-7">{layatharang}</td>
-      <td className="py-7">{chakravyuh}</td>
-      <td className="rounded-r py-7">{total}</td>
+      <td className="rounded-r px-10 py-7">{points}</td>
     </tr>
   );
 }

@@ -55,9 +55,13 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import LeaderboardRow from "../../components/LeaderboardRow";
 import Image from "next/image";
+import ChakravyuhRow from "../../components/ChakravyuhRow";
+import LayatharangRow from "../../components/LayatharangRow";
 
 export default function LeaderboardPage() {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const [chakravyuhData, setChakravyuhData] = useState([]);
+  const [layatharangData, setLayatharangData] = useState([]);
 
   useEffect(() => {
     async function fetchLeaderboard() {
@@ -94,7 +98,55 @@ export default function LeaderboardPage() {
           },
         ];
 
+        const chakravyuhData = [
+          {
+            position: 1,
+            houseName: "Adheeras",
+            points: 100,
+          },
+          {
+            position: 2,
+            houseName: "Mahaveeras",
+            points: 95,
+          },
+          {
+            position: 3,
+            houseName: "Dhronas",
+            points: 90,
+          },
+          {
+            position: 4,
+            houseName: "Brahmas",
+            points: 85,
+          },
+        ];
+
+        const layatharangData = [
+          {
+            position: 1,
+            houseName: "Mahaveeras",
+            points: 100,
+          },
+          {
+            position: 2,
+            houseName: "Adheeras",
+            points: 90,
+          },
+          {
+            position: 3,
+            houseName: "Dhronas",
+            points: 85,
+          },
+          {
+            position: 4,
+            houseName: "Brahmas",
+            points: 80,
+          },
+        ];
+
         setLeaderboardData(sampleData);
+        setChakravyuhData(chakravyuhData);
+        setLayatharangData(layatharangData);
         console.log("leaderboard data set");
       } catch (error) {
         console.error("Error fetching leaderboard:", error.message);
@@ -105,23 +157,18 @@ export default function LeaderboardPage() {
   }, []);
 
   return (
-    <div className="container mx-auto h-full bg-black p-4 text-white">
-      <h1 className="mb-4 text-center text-3xl font-semibold">Leaderboard</h1>
-      {/* <Image
-        className="w-full object-cover"
-        src="/bg1.png"
-        width={100}
-        height={100}
-        alt=" Image"
-      /> */}
+    <main className="container mx-auto h-full bg-black p-4 text-white">
+      <h1 className="mb-2 mt-6 text-center text-3xl font-semibold">
+        Leaderboard
+      </h1>
       <table className="mx-auto w-11/12 border-separate border-spacing-y-6">
         <thead>
           <tr className="font-light">
-            <th className="py-6 text-lg font-normal">Position</th>
-            <th className="py-6 text-lg font-normal">House</th>
-            <th className="py-6 text-lg font-normal">Layatharang</th>
-            <th className="py-6 text-lg font-normal">Chakravyuh</th>
-            <th className="py-6 text-lg font-normal">Total</th>
+            <th className="py-3 text-sm font-normal sm:text-lg">Position</th>
+            <th className="py-3 text-sm font-normal sm:text-lg">House</th>
+            <th className="py-2 text-sm font-normal sm:text-lg">Layatharang</th>
+            <th className="py-3 text-sm font-normal sm:text-lg">Chakravyuh</th>
+            <th className="py-3 text-sm font-normal sm:text-lg">Total</th>
           </tr>
         </thead>
         <tbody>
@@ -130,6 +177,50 @@ export default function LeaderboardPage() {
           ))}
         </tbody>
       </table>
-    </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div>
+          <h1 className="mb-0 mt-8 text-center text-3xl font-semibold">
+            Chakravyuh
+          </h1>
+          <table className="mx-auto border-separate border-spacing-y-6">
+            <thead>
+              <tr className="font-light">
+                <th className="py-2 text-sm font-normal sm:text-lg">
+                  Position
+                </th>
+                <th className="py-2 text-sm font-normal sm:text-lg">House</th>
+                <th className="py-2 text-sm font-normal sm:text-lg">Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {chakravyuhData.map((row, index) => (
+                <ChakravyuhRow key={index} rowData={row} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h1 className="mb-0 mt-8 text-center text-3xl font-semibold">
+            Layatharang
+          </h1>
+          <table className="mx-auto border-separate border-spacing-y-6">
+            <thead>
+              <tr className="font-light">
+                <th className="py-2 text-sm font-normal sm:text-lg">
+                  Position
+                </th>
+                <th className="py-2 text-sm font-normal sm:text-lg">House</th>
+                <th className="py-2 text-sm font-normal sm:text-lg">Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {layatharangData.map((row, index) => (
+                <LayatharangRow key={index} rowData={row} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
   );
 }
