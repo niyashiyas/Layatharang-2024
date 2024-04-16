@@ -5,6 +5,7 @@ import LeaderboardRow from "@/components/LeaderboardRow";
 import Image from "next/image";
 import ChakravyuhRow from "@/components/ChakravyuhRow";
 import LayatharangRow from "@/components/LayatharangRow";
+import StarsWhite from "../../components/StarsWhite/StarsWhite";
 
 export default function LeaderboardPage() {
   const [layatarangScoreboard, setLayatarangScoreboard] = useState([]);
@@ -54,8 +55,9 @@ export default function LeaderboardPage() {
 
   return (
     <main className="container mx-auto h-full bg-black text-white">
+      <StarsWhite />
       <h1
-        className="relative p-10 text-center text-4xl font-normal text-white"
+        className="relative p-9 text-center text-4xl font-normal "
         style={{
           background:
             "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
@@ -63,22 +65,29 @@ export default function LeaderboardPage() {
           WebkitTextFillColor: "transparent",
         }}
       >
-        LEADER-BOARD
+        LEADER BOARD
       </h1>
-      <table className="mx-auto -mt-7 w-full border-separate border-spacing-y-4 p-4 px-2 pt-0 sm:w-11/12">
-        <thead>
-          <tr className="font-light">
-            <th className="hidden py-3 text-sm font-normal sm:block sm:text-lg">
+      <table className="mx-auto -mt-6 w-full border-separate border-spacing-y-4 p-4 px-4 pt-0 sm:w-11/12">
+        <thead
+          style={{
+            background:
+              "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          <tr className="border border-white">
+            <th className="hidden pb-4 pt-2 text-sm font-normal sm:block sm:text-xl">
               Position
             </th>
-            <th className="py-3 text-sm font-normal sm:text-lg">House</th>
-            <th className="py-2 pr-2 text-sm font-normal sm:text-lg">
+            <th className="pb-4 pt-2 text-sm font-normal sm:text-xl">House</th>
+            <th className="pb-4 pr-2 pt-2 text-sm font-normal sm:text-xl">
               Layatharang
             </th>
-            <th className="py-3 pl-1 text-sm font-normal sm:text-lg">
+            <th className="pb-4 pl-1 pt-2 text-sm font-normal sm:text-xl">
               Chakravyuh
             </th>
-            <th className="py-3 text-sm font-normal sm:text-lg">Total</th>
+            <th className="pb-4 pt-2 text-sm font-normal sm:text-xl">Total</th>
           </tr>
         </thead>
         <tbody>
@@ -90,7 +99,7 @@ export default function LeaderboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full">
           <h1
-            className="relative p-9 text-center text-4xl font-normal text-white"
+            className="relative p-8 text-center text-4xl font-normal"
             style={{
               background:
                 "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
@@ -100,9 +109,16 @@ export default function LeaderboardPage() {
           >
             Chakravyuh
           </h1>
-          <table className="mx-auto -mt-5 border-separate border-spacing-y-4 px-1">
-            <thead>
-              <tr className="font-light">
+          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-1">
+            <thead
+              style={{
+                background:
+                  "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              <tr className="">
                 <th className="py-2 text-base font-normal sm:text-lg">
                   Position
                 </th>
@@ -121,7 +137,7 @@ export default function LeaderboardPage() {
         </div>
         <div className="w-full">
           <h1
-            className="relative p-9 text-center text-4xl font-normal text-white"
+            className="relative p-8 text-center text-4xl font-normal "
             style={{
               background:
                 "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
@@ -131,9 +147,16 @@ export default function LeaderboardPage() {
           >
             Layatharang
           </h1>
-          <table className="mx-auto -mt-5 border-separate border-spacing-y-4 px-1">
-            <thead>
-              <tr className="font-light">
+          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-1">
+            <thead
+              style={{
+                background:
+                  "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              <tr className="">
                 <th className="py-2 text-sm font-normal sm:text-lg">
                   Position
                 </th>
