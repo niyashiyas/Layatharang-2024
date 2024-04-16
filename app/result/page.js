@@ -3,6 +3,7 @@ import ResultCard from "@/components/ResultCard/ResultCard";
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import StarsWhite from "../../components/StarsWhite/StarsWhite";
 
 import styles from "./page.module.css";
 
@@ -11,24 +12,6 @@ export default function Home() {
   const [layatharangResults, setLayatharangResults] = useState([]);
   const [chakravyuhResults, setChakravyuhResults] = useState([]);
 
-  /*
-    typeOf results
-    {
-      id: number
-      name: string   //event Name
-      domain: string //CHAKRAVYUH or LAYATARANG
-      results: [
-        {
-          id: number
-          house: {
-            name: string
-          }
-          position: number
-          participant: string // single string for all participants
-        }
-      ]
-    }
-    */
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,20 +38,18 @@ export default function Home() {
     fetchResults();
   }, []);
   return (
-    <main className="h-full bg-black">
+    // <StarsWhite>
+    <main className="h-screen bg-black">
+      <StarsWhite />
       <div className={styles.container}>
         <h2 className={styles.text}>RESULTS</h2>
       </div>
-      <div className="grid grid-cols-1 place-items-center gap-y-16 px-2 pb-8 sm:px-8 md:grid-cols-3">
+      <div className="grid grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
         {chakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
-        {/* <ResultCard result={{ name: "Poem writing" }} />
-        <ResultCard result={{ name: "Writing competition" }} />
-        <ResultCard result={{ name: "Swimming competition" }} />
-        <ResultCard result={{ name: "Poem writing" }} />
-        <ResultCard result={{ name: "Poem writing" }} /> */}
       </div>
     </main>
+    // </StarsWhite>
   );
 }
