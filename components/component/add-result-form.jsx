@@ -152,9 +152,10 @@ export function AddResultForm() {
             </div>
             <div className="flex flex-col space-y-1.5 flex-1">
               <Label htmlFor={`participant-${index}`}>participant</Label>
-              <Input id={`participant-${index}`} placeholder="Enter participant name" type="text" onValueChange={(e)=>{
-                handleChange("participant",value,index);
+              <Input id={`participant-${index}`} placeholder="Enter participant name" type="text" value={row.participant} onChange={(e)=>{
+                 handleChange("participant",e.target.value,index);
               }}/>
+
             </div>
           </div>
         ))}
