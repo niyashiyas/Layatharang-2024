@@ -49,7 +49,7 @@ const HouseLogo = ({ name }) => {
   }
 };
 
-export default function LayatharangRow({ rowData }) {
+export default function LayatharangRow({ rowData, index }) {
   const { chakravyuh_points, id, name, layatarang_points } = rowData;
 
   // Define gradient colors for each house
@@ -63,13 +63,15 @@ export default function LayatharangRow({ rowData }) {
   // Get the gradient color based on the house name
   const houseColor = gradientColors[name];
 
+  const position = index + 1;
+
   return (
     <tr className={`${houseColor} rounded-2xl text-center text-white`}>
-      <td className="rounded-l px-16 py-7">1</td>
+      <td className="rounded-l px-16 py-4 sm:py-7">{position}</td>
       <td className="py-0">
         <HouseLogo name={name} />
       </td>
-      <td className="rounded-r px-14 py-7">{layatarang_points}</td>
+      <td className="rounded-r px-14 py-4 sm:py-7">{layatarang_points}</td>
     </tr>
   );
 }

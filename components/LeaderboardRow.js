@@ -49,24 +49,26 @@ const HouseLogo = ({ name }) => {
   }
 };
 
-export default function LeaderboardRow({ rowData }) {
+export default function LeaderboardRow({ rowData, index }) {
   const { chakravyuh_points, id, name, layatarang_points } = rowData;
 
   // Define gradient colors for each house
   const gradientColors = {
     MAHAVEERAS: "bg-gradient-to-b from-[#693F85] to-[#1B0C28]",
     ADHEERAS: "bg-gradient-to-b from-[#D42423] to-[#4D0303]",
-    DHRONAS: "bg-gradient-to-b from-[#036938] to-[#26574B]",
+    DHRONAS: "bg-gradient-to-b from-[#26574B] to-[#112A24]",
     BRAHMAS: "bg-gradient-to-b from-[#03BFF0] to-[#13274A]",
   };
 
   // Get the gradient color based on the house name
   const houseColor = gradientColors[name];
 
+  const position = index + 1;
+
   return (
     <tr className={`${houseColor} rounded-2xl text-center text-white`}>
       <td className="hidden rounded-l py-4 text-sm sm:block sm:py-8 sm:text-base">
-        1
+        {position}
       </td>
       <td className="p-0">
         <HouseLogo name={name} />

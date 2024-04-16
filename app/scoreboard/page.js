@@ -57,7 +57,7 @@ export default function LeaderboardPage() {
       <h1 className="mb-2 mt-8 text-center text-3xl font-semibold sm:mt-6">
         Leaderboard
       </h1>
-      <table className="mx-auto w-11/12 border-separate border-spacing-y-4">
+      <table className="mx-auto w-full border-separate border-spacing-y-4 px-2 sm:w-11/12">
         <thead>
           <tr className="font-light">
             <th className="hidden py-3 text-sm font-normal sm:block sm:text-lg">
@@ -75,7 +75,7 @@ export default function LeaderboardPage() {
         </thead>
         <tbody>
           {scoreboard.map((row, index) => (
-            <LeaderboardRow key={index} rowData={row} />
+            <LeaderboardRow key={index} rowData={row} index={index} />
           ))}
         </tbody>
       </table>
@@ -98,7 +98,7 @@ export default function LeaderboardPage() {
             </thead>
             <tbody>
               {chakravyuhScoreboard.map((row, index) => (
-                <ChakravyuhRow key={index} rowData={row} />
+                <ChakravyuhRow key={index} rowData={row} index={index} />
               ))}
             </tbody>
           </table>
@@ -119,7 +119,7 @@ export default function LeaderboardPage() {
             </thead>
             <tbody>
               {layatarangScoreboard.map((row, index) => (
-                <LayatharangRow key={index} rowData={row} />
+                <LayatharangRow key={index} rowData={row} index={index} />
               ))}
             </tbody>
           </table>

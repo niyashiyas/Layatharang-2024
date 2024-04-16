@@ -55,11 +55,11 @@ export default function Home() {
     fetchResults();
   }, []);
   return (
-    <main>
+    <main className="h-screen bg-black">
       <div className={styles.container}>
         <h2 className={styles.text}>Results</h2>
       </div>
-      <div className="mb-8 grid grid-cols-1 place-items-center gap-y-16 md:grid-cols-3">
+      <div className="mb-8 grid grid-cols-1 place-items-center gap-y-16 px-0 sm:px-4 md:grid-cols-3">
         {chakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
