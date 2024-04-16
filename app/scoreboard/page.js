@@ -44,12 +44,23 @@ export default function LeaderboardPage() {
           (parseFloat(a.layatarang_points) + parseFloat(a.chakravyuh_points)),
       );
 
+
       setLayatarangScoreboard(sortedLayatharangData);
       setChakravyuhScoreboard(sortedChakravyuhData);
       setScoreboard(sortedScoreboardData);
       setLoading(false);
-    }
 
+    }
+    //to remove realtime remove until the provided marker
+    supabase
+      .channel("Message")
+      .on(
+        "postgres_changes",
+        { event: "UPDATE", schema: "public", table: "house" },
+        fetchScoreboard
+      )
+      .subscribe();
+    //remove  above lines for removing realtime
     fetchScoreboard();
   }, []);
 
