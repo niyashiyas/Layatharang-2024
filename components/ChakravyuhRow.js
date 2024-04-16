@@ -67,11 +67,11 @@ export default function ChakravyuhRow({ rowData, index }) {
 
   return (
     <tr className={`${houseColor} rounded-2xl px-16 text-center text-white`}>
-      <td className="rounded-l px-16 py-4 sm:py-7">{position}</td>
+      <td className="rounded-l-lg px-14 py-4 sm:py-7">{position}</td>
       <td className="py-0">
         <HouseLogo name={name} />
       </td>
-      <td className="rounded-r px-14 py-4 sm:py-7">{chakravyuh_points}</td>
+      <td className="rounded-r-lg px-14 py-4 sm:py-7">{chakravyuh_points}</td>
     </tr>
   );
 }

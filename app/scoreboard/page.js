@@ -53,11 +53,19 @@ export default function LeaderboardPage() {
   }, []);
 
   return (
-    <main className="container mx-auto h-full bg-black p-4 text-white">
-      <h1 className="mb-2 mt-8 text-center text-3xl font-semibold sm:mt-6">
-        Leaderboard
+    <main className="container mx-auto h-full bg-black text-white">
+      <h1
+        className="relative p-10 text-center text-4xl font-normal text-white"
+        style={{
+          background:
+            "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        LEADER-BOARD
       </h1>
-      <table className="mx-auto w-full border-separate border-spacing-y-4 px-2 sm:w-11/12">
+      <table className="mx-auto -mt-7 w-full border-separate border-spacing-y-4 p-4 px-2 pt-0 sm:w-11/12">
         <thead>
           <tr className="font-light">
             <th className="hidden py-3 text-sm font-normal sm:block sm:text-lg">
@@ -81,10 +89,18 @@ export default function LeaderboardPage() {
       </table>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full">
-          <h1 className="mb-0 mt-12 text-center text-3xl font-semibold ">
+          <h1
+            className="relative p-9 text-center text-4xl font-normal text-white"
+            style={{
+              background:
+                "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
             Chakravyuh
           </h1>
-          <table className="mx-auto border-separate border-spacing-y-4">
+          <table className="mx-auto -mt-5 border-separate border-spacing-y-4 px-1">
             <thead>
               <tr className="font-light">
                 <th className="py-2 text-base font-normal sm:text-lg">
@@ -104,10 +120,18 @@ export default function LeaderboardPage() {
           </table>
         </div>
         <div className="w-full">
-          <h1 className="mb-0 mt-12 text-center text-3xl font-semibold ">
+          <h1
+            className="relative p-9 text-center text-4xl font-normal text-white"
+            style={{
+              background:
+                "linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
             Layatharang
           </h1>
-          <table className="mx-auto border-separate border-spacing-y-4">
+          <table className="mx-auto -mt-5 border-separate border-spacing-y-4 px-1">
             <thead>
               <tr className="font-light">
                 <th className="py-2 text-sm font-normal sm:text-lg">

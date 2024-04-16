@@ -7,7 +7,7 @@ const HouseLogo = ({ name }) => {
     case "MAHAVEERAS":
       return (
         <Image
-          className="mx-0 object-contain sm:mx-auto sm:object-cover"
+          className="mx-0 rounded-l-lg object-contain  sm:mx-auto sm:rounded-none sm:object-cover"
           src="/mahav.svg"
           width={100}
           height={100}
@@ -17,7 +17,7 @@ const HouseLogo = ({ name }) => {
     case "ADHEERAS":
       return (
         <Image
-          className="mx-0 object-contain sm:mx-auto sm:object-cover"
+          className="mx-0 rounded-l-lg object-contain  sm:mx-auto sm:rounded-none sm:object-cover"
           src="/adheera.svg"
           width={100}
           height={100}
@@ -27,7 +27,7 @@ const HouseLogo = ({ name }) => {
     case "DHRONAS":
       return (
         <Image
-          className="mx-0 object-contain sm:mx-auto sm:object-cover"
+          className="mx-0 rounded-l-lg object-contain sm:mx-auto sm:rounded-none sm:object-cover"
           src="/drona.svg"
           width={100}
           height={100}
@@ -37,7 +37,7 @@ const HouseLogo = ({ name }) => {
     case "BRAHMAS":
       return (
         <Image
-          className="mx-0 object-contain sm:mx-auto sm:object-cover"
+          className="mx-0 rounded-l-lg object-contain sm:mx-auto sm:rounded-none sm:object-cover"
           src="/bhramas.svg"
           width={100}
           height={100}
@@ -67,15 +67,17 @@ export default function LeaderboardRow({ rowData, index }) {
 
   return (
     <tr className={`${houseColor} rounded-2xl text-center text-white`}>
-      <td className="hidden rounded-l py-4 text-sm sm:block sm:py-8 sm:text-base">
+      <td className=" hidden rounded-l-lg py-4 text-sm sm:table-cell sm:py-8 sm:text-base">
         {position}
       </td>
-      <td className="p-0">
+      <td className="rounded-l-lg p-0 sm:rounded-none ">
         <HouseLogo name={name} />
       </td>
-      <td className="py-4 text-sm sm:py-8 sm:text-base">{layatarang_points}</td>
+      <td className=" py-4 text-sm sm:py-8 sm:text-base">
+        {layatarang_points}
+      </td>
       <td className="py-4 text-sm sm:py-8 sm:text-base">{chakravyuh_points}</td>
-      <td className="rounded-r px-8 py-4 text-sm sm:px-8 sm:py-8 sm:text-base">
+      <td className="rounded-r-lg px-8 py-4 text-sm sm:px-8 sm:py-8 sm:text-base">
         {layatarang_points + chakravyuh_points}
       </td>
     </tr>

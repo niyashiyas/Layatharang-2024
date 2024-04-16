@@ -57,9 +57,9 @@ export default function Home() {
   return (
     <main className="h-full bg-black">
       <div className={styles.container}>
-        <h2 className={styles.text}>Results</h2>
+        <h2 className={styles.text}>RESULTS</h2>
       </div>
-      <div className="grid grid-cols-1 place-items-center gap-y-16 px-0 pb-8 sm:px-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 place-items-center gap-y-16 px-2 pb-8 sm:px-8 md:grid-cols-3">
         {chakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
