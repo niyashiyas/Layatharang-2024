@@ -3,7 +3,7 @@ import ResultCard from "@/components/ResultCard/ResultCard";
 import supabase from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Stars from "../../components/Stars/Stars";
+import StarsWhite from "../../components/StarsWhite/StarsWhite";
 
 import styles from "./page.module.css";
 
@@ -38,9 +38,9 @@ export default function Home() {
     fetchResults();
   }, []);
   return (
-    // <Stars>
+    // <StarsWhite>
     <main className="h-screen bg-black">
-      <Stars />
+      <StarsWhite />
       <div className={styles.container}>
         <h2 className={styles.text}>RESULTS</h2>
       </div>
@@ -50,6 +50,6 @@ export default function Home() {
         ))}
       </div>
     </main>
-    // </Stars>
+    // </StarsWhite>
   );
 }
