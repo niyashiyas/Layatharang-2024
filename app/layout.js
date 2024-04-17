@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/bheeshmas.ico" />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-THD9T1CGHX"

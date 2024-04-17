@@ -9,11 +9,11 @@ export default function Home() {
 
   return (
     <Stars>
-      <main className="flex h-screen flex-col items-center justify-between gap-4 bg-black	object-cover p-24">
+      <main className="flex min-h-screen flex-col items-center justify-start md:pt-16 md:gap-4 sm:gap-0 bg-black	object-cover overflow-hidden">
         <Stars />
-        <div className="absolute -mt-28 h-5/6 w-5/6 bg-[url('/group14.png')] bg-contain bg-center bg-no-repeat sm:-mt-16 sm:h-3/4"></div>
-        <div className=" z-20 mt-80 flex h-full flex-col items-center justify-center sm:mt-96">
-          <div className="mt-2 flex gap-4 rounded-full font-semibold sm:mt-4 sm:gap-8 md:mt-4">
+        <div className="min-h-[70vh] w-[90vw]  bg-[url('/group14.png')] bg-contain bg-center bg-no-repeat"></div>
+        <div className=" max-h-[20vh] z-20 flex  flex-col items-center justify-center">
+          <div className=" flex gap-4 rounded-full font-semibold  sm:gap-8">
             <a href="/scoreboard">
               <div
                 onclick={() => router.push("/scoreboard")}
