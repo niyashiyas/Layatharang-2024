@@ -17,7 +17,7 @@ export default function Home() {
             <a href="/scoreboard">
               <div
                 onclick={() => router.push("/scoreboard")}
-                className="cursor-pointer rounded-full border border-[#febb49] px-5 py-1 font-normal text-[#febb49] hover:bg-[#febb49] hover:text-black sm:px-8 sm:py-2"
+                className="cursor-pointer rounded-full border border-[#febb49] px-5 py-1 font-normal  text-[#febb49] hover:bg-[#febb49] hover:font-semibold hover:text-black sm:px-8 sm:py-2"
               >
                 Score
               </div>
@@ -25,7 +25,7 @@ export default function Home() {
             <a href="/result">
               <div
                 onclick={() => router.push("/result")}
-                className="cursor-pointer rounded-full border border-[#febb49] px-4 py-1 font-normal text-[#febb49] hover:bg-[#febb49] hover:text-black sm:px-6 sm:py-2"
+                className="cursor-pointer rounded-full border border-[#febb49] px-4 py-1 font-normal text-[#febb49] hover:bg-[#febb49] hover:font-semibold hover:text-black sm:px-6 sm:py-2"
               >
                 Results
               </div>
