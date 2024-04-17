@@ -54,7 +54,7 @@ export default function LeaderboardPage() {
   }, []);
 
   return (
-    <main className="container mx-auto h-full bg-black text-white">
+    <main className="container mx-auto h-full bg-black py-2 text-white">
       <StarsWhite />
       <h1
         className="relative p-9 text-center text-4xl font-normal "
@@ -67,7 +67,7 @@ export default function LeaderboardPage() {
       >
         LEADER BOARD
       </h1>
-      <table className="mx-auto -mt-6 w-full border-separate border-spacing-y-4 p-4 px-4 pt-0 sm:w-11/12">
+      <table className="mx-auto -mt-6 w-full border-separate border-spacing-y-4 p-4 px-6 pt-0 sm:w-11/12">
         <thead
           style={{
             background:
@@ -96,7 +96,7 @@ export default function LeaderboardPage() {
           ))}
         </tbody>
       </table>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid-cols-0 grid md:grid-cols-2 md:gap-x-12">
         <div className="w-full">
           <h1
             className="relative p-8 text-center text-4xl font-normal"
@@ -109,7 +109,7 @@ export default function LeaderboardPage() {
           >
             Chakravyuh
           </h1>
-          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-1">
+          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-6">
             <thead
               style={{
                 background:
@@ -147,7 +147,7 @@ export default function LeaderboardPage() {
           >
             Layatharang
           </h1>
-          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-1">
+          <table className="mx-auto -mt-7 border-separate border-spacing-y-4 px-6">
             <thead
               style={{
                 background:
