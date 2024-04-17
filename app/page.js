@@ -13,7 +13,7 @@ export default function Home() {
         <Stars />
         <div className="absolute -mt-28 h-5/6 w-5/6 bg-[url('/group14.png')] bg-contain bg-center bg-no-repeat sm:-mt-16 sm:h-3/4"></div>
         <div className=" sm:mt-92 z-20 mt-80 flex h-full flex-col items-center justify-center">
-          <div className="mt-6 flex rounded-3xl bg-[#151515] font-semibold sm:mt-2 md:mt-8">
+          <div className="mt-6 flex rounded-3xl bg-[#151515] font-semibold sm:mt-8 md:mt-12">
             <a href="/scoreboard">
               <div
                 onclick={() => router.push("/scoreboard")}
