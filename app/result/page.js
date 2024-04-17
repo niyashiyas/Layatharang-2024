@@ -24,7 +24,7 @@ export default function Home() {
         .order("created_at", { ascending: false });
       const layaRes = await supabase
         .from("event")
-        .select("*, results: result(*)")
+        .select("*, results: result(*, house(name))")
         .eq("domain", "LAYATARANG")
         .order("created_at", { ascending: false });
 
@@ -46,6 +46,9 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
         {chakravyuhResults.map((result) => (
+          <ResultCard key={result.id} result={result} />
+        ))}
+        {layatharangResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
       </div>
