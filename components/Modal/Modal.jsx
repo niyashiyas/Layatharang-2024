@@ -56,26 +56,25 @@ export default function Modal({ result, setShowModal }) {
         {result.results.map((value) => {
           return (
             <div key={value.id} className="grid grid-cols-3 place-items-center">
-  {/* Check if `value` and `value.position` are defined before rendering */}
-  {value && value.position && (
-    <h1 className="text-sm md:text-xl">{value.position}</h1>
-  )}
-  
-  {/* Check if `value`, `value.house`, and `value.house.name` are defined before rendering */}
-  {value && value.house && value.house.name && (
-    <h1 className="my-2 text-sm md:text-xl">
-      {capitalizeFirstLetter(value.house.name)}
-    </h1>
-  )}
-  
-  {/* Check if `value` and `value.participant` are defined before rendering */}
-  {value && value.participant && (
-    <h1 className="text-sm md:text-xl">
-      {capitalizeFirstLetter(value.participant)}
-    </h1>
-  )}
-</div>
+              {/* Check if `value` and `value.position` are defined before rendering */}
+              {value && value.position && (
+                <h1 className="text-sm md:text-xl">{value.position}</h1>
+              )}
 
+              {/* Check if `value`, `value.house`, and `value.house.name` are defined before rendering */}
+              {value && value.house && value.house.name && (
+                <h1 className="my-2 text-sm md:text-xl">
+                  {capitalizeFirstLetter(value.house.name)}
+                </h1>
+              )}
+
+              {/* Check if `value` and `value.participant` are defined before rendering */}
+              {value && value.participant && (
+                <h1 className="text-center text-sm md:text-xl">
+                  {capitalizeFirstLetter(value.participant)}
+                </h1>
+              )}
+            </div>
           );
         })}
       </motion.div>
