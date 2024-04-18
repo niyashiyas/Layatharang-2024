@@ -39,7 +39,7 @@ export default function Home() {
   }, []);
   return (
     // <StarsWhite>
-    <main className="h-full bg-black sm:h-screen">
+    <main className="h-full bg-black">
       <StarsWhite />
       <div className={styles.container}>
         <h2 className={styles.text}>RESULTS</h2>
