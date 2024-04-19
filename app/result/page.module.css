@@ -1,5 +1,8 @@
 .container {
   /* background: radial-gradient(ellipse at center, #56513e 0%, #000000 40%); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .text {
   background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%);
@@ -32,3 +35,25 @@
     font-size: 2.5rem;
   }
 }
+
+/* Style for the search bar input */
+.searchBar {
+  background: linear-gradient(to right, #56513e, #000000); /* Gradient similar to theme */
+  color: white; /* White text to match the theme */
+  padding: 0.5rem 1rem; /* Padding around the input */
+  border: 1px solid #c6bb9f; /* Border color matching the shadow */
+  border-radius: 8px; /* Rounded corners for consistency */
+  font-size: 1rem; /* Adjust font size according to preference */
+  font-weight: 400; /* Matching the text style */
+  outline: none; /* Removes default outline on focus */
+  width: 60%; /* 60% width to fit the page and remain centered */
+  margin: 0 auto 50px; /* Centering the search bar and adding bottom margin */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), /* Inner shadow effect */
+              inset -2px -2px 5px rgba(255, 255, 255, 0.2); /* Subtle highlight effect */
+}
+
+.searchBar::placeholder {
+  color: #c6bb9f; /* Placeholder text color matching the shadow */
+}
+
+
