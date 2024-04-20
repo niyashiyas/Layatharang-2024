@@ -11,7 +11,7 @@ export default function Home() {
   const router = useRouter();
   const [layatharangResults, setLayatharangResults] = useState([]);
   const [chakravyuhResults, setChakravyuhResults] = useState([]);
-
+  const [searchQuery, setSearchQuery] = useState(""); // State to hold search query
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Home() {
     async function fetchResults() {
       const chakRes = await supabase
         .from("event")
-        .select("*, results: result(* , house(name))")
+        .select("*, results: result(*, house(name))")
         .eq("domain", "CHAKRAVYUH")
         .order("created_at", { ascending: false });
       const layaRes = await supabase
@@ -37,22 +37,47 @@ export default function Home() {
     }
     fetchResults();
   }, []);
+
+  // Function to filter results based on the search query
+  const filterResults = (results) => {
+    if (!searchQuery) {
+      // If there is no search query, return all results
+      return results;
+    }
+    return results.filter((result) => {
+      // Check if the event name contains the search query (case-insensitive)
+      return (
+        result.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        result.domain.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    });
+  };
+
+  // Filtered results for Layatharang and Chakravyuh
+  const filteredLayatharangResults = filterResults(layatharangResults);
+  const filteredChakravyuhResults = filterResults(chakravyuhResults);
+
   return (
-    // <StarsWhite>
-    <main className="h-full bg-black">
+    <main className="h-full min-h-screen bg-black">
       <StarsWhite />
       <div className={styles.container}>
         <h2 className={styles.text}>RESULTS</h2>
+        <input
+          type="text"
+          placeholder="Search results..."
+          className={styles.searchBar}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
-      <div className="grid min-h-screen grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
-        {chakravyuhResults.map((result) => (
+      <div className="grid grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
+        {filteredChakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
-        {layatharangResults.map((result) => (
+        {filteredLayatharangResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}
       </div>
     </main>
-    // </StarsWhite>
   );
 }
