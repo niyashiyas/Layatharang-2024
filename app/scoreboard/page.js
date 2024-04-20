@@ -44,12 +44,10 @@ export default function LeaderboardPage() {
           (parseFloat(a.layatarang_points) + parseFloat(a.chakravyuh_points)),
       );
 
-
       setLayatarangScoreboard(sortedLayatharangData);
       setChakravyuhScoreboard(sortedChakravyuhData);
       setScoreboard(sortedScoreboardData);
       setLoading(false);
-
     }
     //to remove realtime remove until the provided marker
     supabase
@@ -57,7 +55,7 @@ export default function LeaderboardPage() {
       .on(
         "postgres_changes",
         { event: "UPDATE", schema: "public", table: "house" },
-        fetchScoreboard
+        fetchScoreboard,
       )
       .subscribe();
     //remove  above lines for removing realtime
@@ -65,7 +63,7 @@ export default function LeaderboardPage() {
   }, []);
 
   return (
-    <main className="container mx-auto h-full bg-black py-2 text-white">
+    <main className="container mx-auto h-full min-h-screen bg-black py-2 text-white">
       <StarsWhite />
       <h1
         className="relative p-9 text-center text-4xl font-normal "
@@ -92,7 +90,7 @@ export default function LeaderboardPage() {
               Position
             </th>
             <th className="pb-4 pt-2 text-sm font-normal sm:text-xl">House</th>
-            <th className="pb-4 pr-2 pt-2 text-sm font-normal sm:text-xl">
+            <th className="pb-4 pr-1 pt-2 text-sm font-normal sm:text-xl">
               Layatharang
             </th>
             <th className="pb-4 pl-1 pt-2 text-sm font-normal sm:text-xl">

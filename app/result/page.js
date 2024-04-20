@@ -44,7 +44,7 @@ export default function Home() {
       <div className={styles.container}>
         <h2 className={styles.text}>RESULTS</h2>
       </div>
-      <div className="grid grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
+      <div className="grid min-h-screen grid-cols-1 place-items-center gap-y-8 px-4 pb-8 sm:gap-y-16 sm:px-12 md:grid-cols-4">
         {chakravyuhResults.map((result) => (
           <ResultCard key={result.id} result={result} />
         ))}

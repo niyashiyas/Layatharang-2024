@@ -50,7 +50,7 @@ export default function Modal({ result, setShowModal }) {
         </h1>
         <div className="mb-3 grid grid-cols-3 place-items-center">
           <h1 className="font-semibold md:text-xl">Position</h1>
-          <h1 className="font-semibold md:text-xl">House name</h1>
+          <h1 className="font-semibold md:text-xl">House</h1>
           <h1 className="font-semibold md:text-xl">Participant</h1>
         </div>
         {result.results.map((value) => {
