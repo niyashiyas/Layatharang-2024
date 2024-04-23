@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
       </main> */}
-      <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-center text-4xl font-bold  ">
+      <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-center md:text-4xl font-bold text-lg">
         Result Will be displayed on MainSTAGE Screen soon!
       </h1>
     </Stars>
