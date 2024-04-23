@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <Stars>
-      <main className="flex flex-col items-center justify-start md:pt-16 md:gap-4 sm:gap-0 bg-black	object-cover overflow-hidden h-screen:100vh">
+      {/* <main className="flex flex-col items-center justify-start md:pt-16 md:gap-4 sm:gap-0 bg-black	object-cover overflow-hidden h-screen:100vh">
         <Stars />
         <div className="min-h-[70vh] w-[90vw]  bg-[url('/group14.png')] bg-contain bg-center bg-no-repeat"></div>
         <div className=" max-h-[20vh] z-20 flex  flex-col items-center justify-center">
@@ -32,7 +32,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </main>
+      </main> */}
+      <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-center text-4xl font-bold  ">
+        Result Will be displayed on MainSTAGE Screen soon!
+      </h1>
     </Stars>
   );
 }
