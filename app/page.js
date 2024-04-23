@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <Stars>
-      <main className="flex min-h-screen flex-col items-center justify-start md:pt-16 md:gap-4 sm:gap-0 bg-black	object-cover overflow-hidden">
+      <main className="flex flex-col items-center justify-start md:pt-16 md:gap-4 sm:gap-0 bg-black	object-cover overflow-hidden h-screen:100vh">
         <Stars />
         <div className="min-h-[70vh] w-[90vw]  bg-[url('/group14.png')] bg-contain bg-center bg-no-repeat"></div>
         <div className=" max-h-[20vh] z-20 flex  flex-col items-center justify-center">
